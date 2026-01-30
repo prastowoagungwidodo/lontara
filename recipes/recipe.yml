@@ -49,7 +49,7 @@ modules:
           - org.gnome.Loupe
           - org.gnome.Showtime
           - org.gnome.Calendar
-          - org.gnome.Clocks
+          - org.gnome.clocks
           - org.gnome.font-viewer
           - org.gnome.Weather
           - org.gnome.Papers
