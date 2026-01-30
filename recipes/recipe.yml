@@ -3,11 +3,11 @@
 # image will be published to ghcr.io/<user>/<name>
 name: lontara
 # description will be included in the image's metadata
-description: This is my personal OS image.
+description: Secure and Easy to Use Distro
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/silverblue-main
-image-version: 42 # latest is also supported if you want new updates ASAP
+image-version: 43 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -21,10 +21,17 @@ modules:
     repos:
       copr:
         - atim/starship
+      files:
+        - https://repo.secureblue.dev/secureblue.repo
     install:
       packages:
         - micro
         - starship
+        - trivalent
+        - zsh
+        - usbguard
+        - usbguard-notifier
+        - usbguard-selinux
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
@@ -40,6 +47,30 @@ modules:
         install: # system flatpaks we want all users to have and not remove
           - org.mozilla.firefox
           - org.gnome.Loupe
+          - org.gnome.Showtime
+          - org.gnome.Calendar
+          - org.gnome.CLocks
+          - org.gnome.font-viewer
+          - org.gnome.Weather
+          - org.gnome.Papers
+          - org.gnome.Characters
+          - org.gtk.Gtk3theme.adw-gtk3
+          - org.gtk.Gtk3theme.adw-gtk3-dark
+          - com.github.tchx84.Flatseal
+          - com.mattjakeman.ExtensionManager
+        remove:
+          - org.gnome.Extensions
       - scope: user # Also add Flathub user repo, but no user packages
-
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - JetBrainsMono
+  - type: gschema-overrides
+  - type: systemd
+    system:
+      enabled:
+        - usbguard.service
+    user:
+      enabled:
+        - usbguard-notifier.service
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
