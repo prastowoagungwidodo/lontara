@@ -81,7 +81,6 @@ modules:
     properties:
       ID: lontara
       ID_LIKE: fedora
-      VERSION_ID: 43
       NAME: Lontara
       LOGO: lontara
       DEFAULT_HOSTNAME: lontara
