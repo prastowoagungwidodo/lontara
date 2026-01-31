@@ -17,6 +17,15 @@ modules:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
+  - type: os-release
+    properties:
+      ID: lontara
+      ID_LIKE: fedora
+      NAME: Lontara
+      LOGO: lontara
+      DEFAULT_HOSTNAME: lontara
+      BUG_REPORT_URL: https://github.com/prastowoagungwidodo/lontara/issues
+      HOME_URL: https://github.com/prastowoagungwidodo/lontara
   - type: dnf
     repos:
       copr:
@@ -34,8 +43,6 @@ modules:
         - usbguard-selinux
     remove:
       packages:
-        # example: removing firefox (in favor of the flatpak)
-        # "firefox" is the main package, "firefox-langpacks" is a dependency
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
 
@@ -76,14 +83,5 @@ modules:
   - type: brew
   - type: script
     scripts:
-      - dconf_update.sh
-  - type: os-release
-    properties:
-      ID: lontara
-      ID_LIKE: fedora
-      NAME: Lontara
-      LOGO: lontara
-      DEFAULT_HOSTNAME: lontara
-      BUG_REPORT_URL: https://github.com/prastowoagungwidodo/lontara/issues
-      HOME_URL: https://github.com/prastowoagungwidodo/lontara
+      - lontara-customize.sh
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
