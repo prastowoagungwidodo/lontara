@@ -74,4 +74,8 @@ modules:
       enabled:
         - usbguard-notifier.service
   - type: brew
+  - type: scripts
+    scripts:
+      - dconf-update.sh
+      - change-distribution-logo.sh
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
