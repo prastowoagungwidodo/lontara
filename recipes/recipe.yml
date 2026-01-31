@@ -74,8 +74,17 @@ modules:
       enabled:
         - usbguard-notifier.service
   - type: brew
-  - type: scripts
+  - type: script
     scripts:
       - dconf_update.sh
-      - change_distribution_logo.sh
+  - type: os-release
+    properties:
+      ID: lontara
+      ID_LIKE: fedora
+      VERSION_ID: 43
+      NAME: Lontara
+      LOGO: lontara
+      DEFAULT_HOSTNAME: lontara
+      BUG_REPORT_URL: https://github.com/prastowoagungwidodo/lontara/issues
+      HOME_URL: https://github.com/prastowoagungwidodo/lontara
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
