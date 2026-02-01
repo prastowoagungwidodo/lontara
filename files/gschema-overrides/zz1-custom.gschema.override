@@ -5,7 +5,7 @@ tap-to-click=true
 gtk-theme="adw-gtk3"
 color-scheme="default"
 font-name="Adwaita Sans 10"
-monospace-font-name="JetBrainsMono Nerd Font 10"
+monospace-font-name="JetBrainsMono Nerd Font 9"
 font-antialiasing="rgba"
 font-hinting="slight"
 

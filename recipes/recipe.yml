@@ -34,13 +34,16 @@ modules:
         - https://repo.secureblue.dev/secureblue.repo
     install:
       packages:
-        - micro
         - starship
         - trivalent
         - zsh
         - usbguard
         - usbguard-notifier
         - usbguard-selinux
+        - selinux-policy-devel
+        - adw-gtk3-theme
+        - 7zip
+        - 7zip-standalone-all
     remove:
       packages:
         - firefox
@@ -77,6 +80,7 @@ modules:
     install:
       - 307
       - 615
+      - 7048
   - type: gschema-overrides
   - type: systemd
     system:
