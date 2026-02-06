@@ -22,6 +22,7 @@ modules:
       ID: lontara
       ID_LIKE: fedora
       NAME: Lontara
+      PRETTY_NAME: Lontara
       LOGO: lontara
       DEFAULT_HOSTNAME: lontara
       BUG_REPORT_URL: https://github.com/prastowoagungwidodo/lontara/issues
@@ -90,6 +91,8 @@ modules:
       enabled:
         - usbguard-notifier.service
   - type: brew
+    nofile-limits: true # increase nofile limits
+    brew-analytics: false # disable telemetry
   - type: script
     scripts:
       - lontara-customize.sh
