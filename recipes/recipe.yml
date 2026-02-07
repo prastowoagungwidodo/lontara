@@ -126,4 +126,5 @@ modules:
       - l1d_flush=on
       - l1tf=full,force
       - lockdown=confidentiality
+  - type: initramfs
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
