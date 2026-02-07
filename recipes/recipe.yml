@@ -96,4 +96,34 @@ modules:
     scripts:
       - lontara-customize.sh
       - selinux.sh
+  - type: kargs
+    arch: x86_64, aarch64
+    kargs:
+      - loglevel=0
+      - module.sig_enforce=1
+      - page_alloc.shuffle=1
+      - proc_mem.force_override=ptrace
+      - pti=on
+      - random.trust_bootloader=off
+      - random.trust_cpu=off
+      - randomize_kstack_offset=on
+      - rd.shell=0
+      - rd.emergency=halt
+      - slab_nomerge
+      - spec_store_bypass_disable=on
+      - spectre_v2=on
+      - ssbd=force-on
+      - vdso32=0
+      - vsyscall=none
+      - init_on_alloc=1
+      - init_on_free=1
+      - iommu=force
+      - intel_iommu=on
+      - iommu.passthrough=0
+      - iommu.strict=1
+      - kvm-intel.vmentry_l1d_flush=always
+      - kvm.mitigate_smt_rsb=1
+      - l1d_flush=on
+      - l1tf=full,force
+      - lockdown=confidentiality
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
