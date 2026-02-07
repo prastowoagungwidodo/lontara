@@ -72,7 +72,6 @@ modules:
           - com.mattjakeman.ExtensionManager
         remove:
           - org.gnome.Extensions
-      - scope: user # Also add Flathub user repo, but no user packages
   - type: fonts
     fonts:
       nerd-fonts:
