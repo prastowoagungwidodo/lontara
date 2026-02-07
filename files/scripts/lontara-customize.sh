@@ -13,7 +13,7 @@ mkdir -p /etc/dconf/db/gdm.d
 
 cat <<EOF >/etc/dconf/db/gdm.d/00-gdm-settings
 [org/gnome/login-screen]
-logo='/usr/share/pixmaps/lontara.svg'
+logo='/usr/share/pixmaps/lontara-gdm-logo.png'
 EOF
 
 dconf update
