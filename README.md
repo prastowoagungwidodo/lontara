@@ -2,7 +2,7 @@
 
 [![bluebuild build badge](https://github.com/prastowoagungwidodo/lontara/actions/workflows/build.yml/badge.svg)](https://github.com/prastowoagungwidodo/lontara/actions/workflows/build.yml)
 
-My Personal Linux Distribution. Based on Fedora Silverblue (Atomic) with security patch.
+Lontara is a GNU/Linux desktop operating system based on Fedora Atomic Desktop. It's designed for comfortable (easy and secure) everyday use.
 
 ## Features
 - Pre-Installed [Trivalent](https://github.com/secureblue/Trivalent) Browser (Chromium based browser with security patch)
