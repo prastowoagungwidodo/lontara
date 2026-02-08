@@ -33,12 +33,10 @@ modules:
         - atim/starship
       files:
         - https://repo.secureblue.dev/secureblue.repo
-        - netbird.repo
     install:
       packages:
         - starship
         - trivalent
-        - netbird
         - zsh
         - usbguard
         - usbguard-notifier
@@ -97,6 +95,7 @@ modules:
   - type: script
     scripts:
       - lontara-customize.sh
+      - netbird-install.sh
       - selinux.sh
   - type: kargs
     arch: x86_64, aarch64
