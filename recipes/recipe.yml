@@ -41,7 +41,6 @@ modules:
         - usbguard
         - usbguard-notifier
         - usbguard-selinux
-        - selinux-policy-devel
         - adw-gtk3-theme
         - 7zip
         - 7zip-standalone-all
