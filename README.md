@@ -9,6 +9,8 @@ Lontara is a GNU/Linux desktop operating system based on Fedora Atomic Desktop. 
 - Kernel Hardening using kernel arguments and sysctl configuration
 - USB Guard
 - Homebrew
+- Bazaar as default App Store
+- Enable FailLock
 
 
 ## Installation
@@ -37,9 +39,25 @@ To rebase an existing atomic Fedora installation to the latest build:
 
 The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
 
-## ISO
+## ISO Download
 
-If build on Fedora Atomic, you can generate an offline ISO with the instructions available [here](https://blue-build.org/learn/universal-blue/#fresh-install-from-an-iso). These ISOs cannot unfortunately be distributed on GitHub for free due to large sizes, so for public projects something else has to be used for hosting.
+[Download Latest Version](https://drive.google.com/file/d/1n4AdgKwnDNPHv_5HQpDW8GwjWD-i04yA/view?usp=drive_link)
+
+[Checksum](https://drive.google.com/file/d/1XoB_vjitEUBGhcR3rrWl0aRYrMxaWtyN/view?usp=drive_link)
+
+
+It's recommended to use "Fedora Media Writer" to create a bootable USB drive. Using other options like DD and other applications should theoretically be fine, but I only tested using Fedora Media Writer.
+
+You can create your own ISO image using [this](https://blue-build.org/learn/universal-blue/#fresh-install-from-an-iso) instructions.
+
+
+## Post Installation
+
+- To unlock MOK, use "lontara" as MOK Password.
+- If youre using LUKS encryption, you can setup TPM2 Unlock using command: `ujust setup-luks-tpm-unlock`
+- Trivalent disabled Chrome Extensions by default. Go to Security Settings to enable. `chrome://settings/security`
+- Disable Network Service Sandbox if you have login sessions issues. `chrome://settings/security`
+  
 
 ## Verification
 
