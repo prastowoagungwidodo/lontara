@@ -50,6 +50,7 @@ modules:
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
         - gnome-shell-extension-background-logo
         - gnome-tour
+        - gnome-software
 
   - type: default-flatpaks
     configurations:
@@ -71,6 +72,7 @@ modules:
           - org.gtk.Gtk3theme.adw-gtk3-dark
           - com.github.tchx84.Flatseal
           - com.mattjakeman.ExtensionManager
+          - io.github.kolunmi.Bazaar
         remove:
           - org.gnome.Extensions
   - type: fonts
@@ -99,6 +101,7 @@ modules:
       - lontara-customize.sh
       - netbird-install.sh
       - selinux.sh
+      - enable-faillock.sh
   - type: kargs
     arch: x86_64, aarch64
     kargs:

@@ -2,8 +2,11 @@
 
 set -euo pipefail
 
+echo "Installing NetBird..."
 # NETBIRD_VERSION="0.64.5"
 NETBIRD_VERSION=$(curl -s https://api.github.com/repos/netbirdio/netbird/releases/latest | grep '"tag_name":' | sed -E 's/.*"v?([^"]+)".*/\1/')
+
+echo "Latest NetBird version: ${NETBIRD_VERSION}"
 
 if [ -z "$NETBIRD_VERSION" ]; then
   echo "Error: Could not fetch the latest version."
