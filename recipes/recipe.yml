@@ -34,7 +34,7 @@ modules:
         - secureblue/packages
       files:
         - https://repo.secureblue.dev/secureblue.repo
-  #     - https://negativo17.org/repos/fedora-multimedia.repo
+      nonfree: rpmfusion
     install:
       packages:
         - starship
@@ -49,24 +49,13 @@ modules:
         - 7zip-standalone-all
         - hardened_malloc
         - no_rlimit_as
-    remove:
-      packages:
-        - firefox
-        - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
-        - gnome-shell-extension-background-logo
-        - gnome-tour
-        - gnome-software
-
-  ### WARNING! Proprietary Packages!!!!
-  - type: dnf
-    install:
-      packages:
+        - unrar
+        - hfsutils
+        - hfsplus-tools
         - libopenjph
         - heif-pixbuf-loader
         - ffmpegthumbnailer
         - pipewire-libs-extra
-
-  - type: dnf
     replace:
       from-repo: fedora-multimedia
       skip-unavailable: true
@@ -84,7 +73,14 @@ modules:
         - libva-intel-media-driver
         - intel-gmmlib
         - intel-mediasdk
-  - type: dnf 
+    remove:
+      packages:
+        - firefox
+        - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+        - gnome-shell-extension-background-logo
+        - gnome-tour
+        - gnome-software
+  - type: dnf
     replace:
       from-repo: fedora-multimedia
       skip-unavailable: true
