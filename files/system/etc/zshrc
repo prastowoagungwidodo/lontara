@@ -59,9 +59,4 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 autoload -Uz bashcompinit
 bashcompinit
 
-# Source the bash_completion script if it exists
-if [ -f /usr/share/bash-completion/bash_completion ]; then
-    source /usr/share/bash-completion/bash_completion
-fi
-
 eval "$(starship init zsh)"
