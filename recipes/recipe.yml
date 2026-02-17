@@ -34,6 +34,7 @@ modules:
         - secureblue/packages
       files:
         - https://repo.secureblue.dev/secureblue.repo
+  #     - https://negativo17.org/repos/fedora-multimedia.repo
     install:
       packages:
         - starship
@@ -55,6 +56,61 @@ modules:
         - gnome-shell-extension-background-logo
         - gnome-tour
         - gnome-software
+
+  ### WARNING! Proprietary Packages!!!!
+  - type: dnf
+    install:
+      packages:
+        - libopenjph
+        - heif-pixbuf-loader
+        - ffmpegthumbnailer
+        - pipewire-libs-extra
+
+  - type: dnf
+    replace:
+      from-repo: fedora-multimedia
+      skip-unavailable: true
+      packages:
+        - libheif
+        - libva
+        - mesa-dri-drivers
+        - gstreamer1-plugin-libav
+        - mesa-filesystem
+        - mesa-libEGL
+        - mesa-libGL
+        - mesa-libgbm
+        - mesa-va-drivers
+        - mesa-vulkan-drivers
+        - libva-intel-media-driver
+        - intel-gmmlib
+        - intel-mediasdk
+  - type: dnf 
+    replace:
+      from-repo: fedora-multimedia
+      skip-unavailable: true
+      packages:
+        - old: ffmpeg-free
+          new: ffmpeg
+        - old: fdk-aac-free
+          new: libfdk-aac
+        - old: gstreamer1-plugins-ugly-free
+          new: gstreamer1-plugins-ugly
+        - old: libavcodec-free
+          new: libavcodec
+        - old: libavdevice-free
+          new: libavdevice
+        - old: libavfilter-free
+          new: libavfilter
+        - old: libavformat-free
+          new: libavformat
+        - old: libavutil-free
+          new: libavutil
+        - old: libpostproc-free
+          new: libpostproc
+        - old: libswresample-free
+          new: libswresample
+        - old: libswscale-free
+          new: libswscale
 
   - type: default-flatpaks
     configurations:
