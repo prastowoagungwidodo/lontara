@@ -34,7 +34,7 @@ modules:
         - secureblue/packages
       files:
         - https://repo.secureblue.dev/secureblue.repo
-      nonfree: rpmfusion
+      nonfree: negativo17
     install:
       packages:
         - starship
@@ -56,18 +56,46 @@ modules:
         - heif-pixbuf-loader
         - ffmpegthumbnailer
         - pipewire-libs-extra
-        - intel-media-driver
-        - libva-intel-driver
-        - libva-nvidia-driver
-        - gstreamer1-plugins-bad-free
-        - gstreamer1-plugins-ugly-free
-        - gstreamer1-plugins-good
-        - gstreamer1-plugins-base
-        - gstreamer1-plugins-bad-nonfree
-        - gstreamer1-plugins-ugly-nonfree
-        - lame
-        - gstreamer1-plugins-libav
-        - ffmpeg
+    replace:
+      - from-repo: fedora-multimedia
+        skip-unavailable: true
+        allow-erasing: true
+        packages:
+          - libheif
+          - libva
+          - mesa-dri-drivers
+          - gstreamer1-plugin-libav
+          - mesa-filesystem
+          - mesa-libEGL
+          - mesa-libGL
+          - mesa-libgbm
+          - mesa-va-drivers
+          - mesa-vulkan-drivers
+          - libva-intel-media-driver
+          - intel-gmmlib
+          - intel-mediasdk
+          - old: ffmpeg-free
+            new: ffmpeg
+          - old: fdk-aac-free
+            new: libfdk-aac
+          - old: gstreamer1-plugins-ugly-free
+            new: gstreamer1-plugins-ugly
+          - old: libavcodec-free
+            new: libavcodec
+          - old: libavdevice-free
+            new: libavdevice
+          - old: libavfilter-free
+            new: libavfilter
+          - old: libavformat-free
+            new: libavformat
+          - old: libavutil-free
+            new: libavutil
+          - old: libpostproc-free
+            new: libpostproc
+          - old: libswresample-free
+            new: libswresample
+          - old: libswscale-free
+            new: libswscale
     remove:
       packages:
         - firefox
