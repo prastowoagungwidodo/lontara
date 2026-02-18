@@ -67,13 +67,7 @@ modules:
         - gstreamer1-plugins-ugly-nonfree
         - lame
         - gstreamer1-plugins-libav
-    replace:
-      - from-repo: rpmfusion
-        skip-unavailable: true
-        allow-erasing: true
-        packages:
-          - old: ffmpeg-free
-            new: ffmpeg
+        - ffmpeg
     remove:
       packages:
         - firefox
