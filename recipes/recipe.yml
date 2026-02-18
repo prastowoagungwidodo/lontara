@@ -107,7 +107,6 @@ modules:
           new: libswresample
         - old: libswscale-free
           new: libswscale
-
   - type: default-flatpaks
     configurations:
       - notify: false # Send notification after install/uninstall is finished (true/false)
