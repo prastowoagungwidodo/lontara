@@ -70,7 +70,7 @@ modules:
     replace:
       - from-repo: rpmfusion
         skip-unavailable: true
-        allow-errasing: true
+        allow-erasing: true
         packages:
           - old: ffmpeg-free
             new: ffmpeg
