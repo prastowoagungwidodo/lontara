@@ -162,7 +162,6 @@ modules:
       - disable-avahi-daemon.sh
       - install-zsh-plugins.sh
       - hardened_malloc.sh
-      - install-vscode.sh
   - type: kargs
     arch: x86_64, aarch64
     kargs:
