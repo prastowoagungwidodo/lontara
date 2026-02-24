@@ -48,6 +48,22 @@ _src_etc_profile_d
 
 unset -f pathmunge _src_etc_profile_d
 
+# HISTORY CONFIGURATION
+HISTFILE="$HOME/.zsh_history"
+
+# How many lines to keep in the current session
+HISTSIZE=5000
+
+# How many lines to save in the history file
+SAVEHIST=5000
+
+# Recommended options for a better experience:
+setopt APPEND_HISTORY     # Append to the file, don't overwrite it
+setopt SHARE_HISTORY      # Share history between different instances of zsh
+setopt INC_APPEND_HISTORY # Write to the history file immediately, not just on exit
+
+# END OF HISTORY CONFIGURATION
+
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
