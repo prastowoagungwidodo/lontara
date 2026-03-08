@@ -9,5 +9,8 @@ monospace-font-name="JetBrainsMono Nerd Font 9"
 font-antialiasing="rgba"
 font-hinting="slight"
 
+[org.gnome.shell]
+favorite-apps=['trivalent.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.Nautilus.desktop', 'io.github.kolunmi.Bazaar.desktop', 'org.gnome.TextEditor.desktop', 'org.gnome.Calculator.desktop', 'org.gnome.Ptyxis.desktop']
+
 [org.gnome.mutter]
 attach-modal-dialogs=false
