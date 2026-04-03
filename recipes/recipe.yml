@@ -40,6 +40,7 @@ modules:
         - starship
         - trivalent
         - trivalent-subresource-filter
+        - trivalent-selinux
         - zsh
         - usbguard
         - usbguard-notifier
@@ -157,7 +158,6 @@ modules:
     scripts:
       - lontara-customize.sh
       - netbird-install.sh
-      - selinux.sh
       - enable-faillock.sh
       - disable-sshd-vsock.sh
       - disable-avahi-daemon.sh
