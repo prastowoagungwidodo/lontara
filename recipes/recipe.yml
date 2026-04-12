@@ -162,6 +162,7 @@ modules:
       - disable-sshd-vsock.sh
       - disable-avahi-daemon.sh
       - install-zsh-plugins.sh
+      - install-warp-terminal.sh
       - hardened_malloc.sh
   - type: kargs
     arch: x86_64, aarch64
