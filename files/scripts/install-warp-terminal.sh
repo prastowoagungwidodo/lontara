@@ -6,7 +6,7 @@ ARCH=$(uname -m)
 if [ "$ARCH" == "x86_64" ]; then
   echo "Detected architecture: x86_64"
   echo "Installing Warp Terminal..."
-  DOWNLOAD_URL="https://releases.warp.dev/stable/v0.2026.04.08.08.36.stable_02/warp-terminal-v0.2026.04.08.08.36.stable_02-1.x86_64.rpm"
+  DOWNLOAD_URL="https://app.warp.dev/get_warp?package=rpm"
 
   curl -L "${DOWNLOAD_URL}" -o /tmp/warp-terminal.rpm
 
