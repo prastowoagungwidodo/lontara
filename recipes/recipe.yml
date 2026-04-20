@@ -164,7 +164,6 @@ modules:
       - install-zsh-plugins.sh
       - install-warp-terminal.sh
       - hardened_malloc.sh
-      - add-ublue-tap.sh
   - type: kargs
     arch: x86_64, aarch64
     kargs:
