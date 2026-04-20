@@ -2,6 +2,9 @@
 
 set -euo pipefail
 
+# Ensure Homebrew is in the PATH for the build session
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
 echo "Add ublue tap"
 
 brew tap ublue-os/tap
