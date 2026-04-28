@@ -159,7 +159,7 @@ modules:
       - lontara-customize.sh
       - netbird-install.sh
       - enable-faillock.sh
-      - disable-sshd-vsock.sh
+      #- disable-sshd-vsock.sh
       - disable-avahi-daemon.sh
       - install-zsh-plugins.sh
       - install-warp-terminal.sh
