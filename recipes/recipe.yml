@@ -137,12 +137,12 @@ modules:
     install:
       - 307
       - 615
-      - 7048
       - 779
       - 517
       - 3193
       - 3843
       - 2986
+      #- 7048 # Temporary disabled rounded windows corner due to approval review
   - type: gschema-overrides
   - type: systemd
     system:
