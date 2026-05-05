@@ -127,6 +127,7 @@ modules:
           - com.github.tchx84.Flatseal
           - com.mattjakeman.ExtensionManager
           - io.github.kolunmi.Bazaar
+          - be.alexandervanhee.gradia
         remove:
           - org.gnome.Extensions
   - type: fonts
