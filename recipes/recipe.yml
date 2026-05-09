@@ -195,5 +195,7 @@ modules:
       - l1d_flush=on
       - lockdown=confidentiality
       - systemd.ssh_auto=no
+      - efi=disable_early_pci_dma
+      - debugfs=off
   - type: initramfs
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
