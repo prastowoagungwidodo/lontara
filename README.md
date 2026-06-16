@@ -62,6 +62,21 @@ You can create your own ISO image using [this](https://blue-build.org/learn/univ
 - If youre using LUKS encryption, you can setup TPM2 Unlock using command: `ujust setup-luks-tpm-unlock`
 - Trivalent disabled Chrome Extensions by default. Go to Security Settings to enable. `chrome://settings/security`
 - Disable Network Service Sandbox if you have login sessions issues. `chrome://settings/security`
+- If you having issues opening some apps and need to enable X11, override gnome-shell User Service using `systemctl --user edit org.gnome.Shell@user.service` and add the following content to the top of the file:
+
+  ```
+  [Service]
+  ExecStart=
+  ExecStart=/usr/bin/gnome-shell --mode=%i
+  ```
+
+make sure to reload the systemd user daemon and restart gnome-shell after that:
+
+```
+systemctl --user daemon-reload
+```
+
+Log out and log back in to apply the changes:
 
 ## Verification
 
