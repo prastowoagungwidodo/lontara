@@ -42,9 +42,7 @@ modules:
         - development-tools
     install:
       packages:
-        - xfce4-goodies
         - human-theme-gtk
-        - dmz-cursor-themes
         - ghostty
         - lightdm
         - lightdm-gtk
@@ -118,6 +116,8 @@ modules:
         - thunderbird
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+        - dnfdragora
+        - dnfdragora-updater
   - type: default-flatpaks
     configurations:
       - notify: false # Send notification after install/uninstall is finished (true/false)
