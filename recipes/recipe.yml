@@ -37,6 +37,7 @@ modules:
         - https://repo.secureblue.dev/secureblue.repo
       nonfree: negativo17
     group-install:
+      with-optional: true
       packages:
         - xfce-desktop-environment
         - development-tools
@@ -137,6 +138,7 @@ modules:
     system:
       enabled:
         - usbguard.service
+        - lightdm.service
     user:
       enabled:
         - usbguard-notifier.service
