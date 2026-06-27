@@ -6,7 +6,7 @@ name: lontara
 description: Secure and Easy to Use Distro
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
+base-image: ghcr.io/ublue-os/base-main
 image-version: 44 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -38,10 +38,18 @@ modules:
       nonfree: negativo17
     group-install:
       packages:
+        - xfce-desktop-environment
         - development-tools
     install:
       packages:
+        - xfce4-goodies
+        - human-theme-gtk
+        - dmz-cursor-themes
         - ghostty
+        - lightdm
+        - lightdm-gtk
+        - lightdm-settings
+        - slick-greeter
         - starship
         - trivalent
         - trivalent-subresource-filter
@@ -50,7 +58,6 @@ modules:
         - usbguard
         - usbguard-notifier
         - usbguard-selinux
-        - adw-gtk3-theme
         - 7zip
         - 7zip-standalone-all
         - hardened_malloc
@@ -108,50 +115,23 @@ modules:
             new: libswscale
     remove:
       packages:
+        - thunderbird
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
-        - gnome-shell-extension-background-logo
-        - gnome-tour
-        - gnome-software
   - type: default-flatpaks
     configurations:
       - notify: false # Send notification after install/uninstall is finished (true/false)
         scope: system
         # If no repo information is specified, Flathub will be used by default
         install: # system flatpaks we want all users to have and not remove
-          - org.mozilla.firefox
-          - org.gnome.Loupe
-          - org.gnome.Showtime
-          - org.gnome.Calendar
-          - org.gnome.Calculator
-          - org.gnome.clocks
-          - org.gnome.font-viewer
-          - org.gnome.Weather
-          - org.gnome.Papers
-          - org.gnome.Characters
-          - org.gnome.TextEditor
-          - org.gtk.Gtk3theme.adw-gtk3
-          - org.gtk.Gtk3theme.adw-gtk3-dark
           - com.github.tchx84.Flatseal
-          - com.mattjakeman.ExtensionManager
           - io.github.kolunmi.Bazaar
-          - be.alexandervanhee.gradia
         remove:
           - org.gnome.Extensions
   - type: fonts
     fonts:
       nerd-fonts:
         - JetBrainsMono
-  - type: gnome-extensions
-    install:
-      - 307
-      - 615
-      - 779
-      - 517
-      - 3193
-      - 3843
-      - 2986
-      - 7048
   - type: gschema-overrides
   - type: systemd
     system:
