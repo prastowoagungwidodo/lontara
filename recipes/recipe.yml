@@ -3,10 +3,10 @@
 # image will be published to ghcr.io/<user>/<name>
 name: lontara
 # description will be included in the image's metadata
-description: Secure and Easy to Use Distro
+description: Traditional Linux Desktop in Modern Environment
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
+base-image: ghcr.io/ublue-os/base-main
 image-version: 44 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -39,8 +39,12 @@ modules:
     group-install:
       packages:
         - development-tools
+        - xfce-desktop
     install:
       packages:
+        - lightdm
+        - slick-greeter
+        - lightdm-settings
         - ghostty
         - starship
         - trivalent
@@ -110,9 +114,9 @@ modules:
       packages:
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
-        - gnome-shell-extension-background-logo
-        - gnome-tour
-        - gnome-software
+        - dnfdragora
+        - dnfdragora-updater
+        - thunderbird
   - type: default-flatpaks
     configurations:
       - notify: false # Send notification after install/uninstall is finished (true/false)
@@ -120,43 +124,16 @@ modules:
         # If no repo information is specified, Flathub will be used by default
         install: # system flatpaks we want all users to have and not remove
           - org.mozilla.firefox
-          - org.gnome.Loupe
-          - org.gnome.Showtime
-          - org.gnome.Calendar
-          - org.gnome.Calculator
-          - org.gnome.clocks
-          - org.gnome.font-viewer
-          - org.gnome.Weather
-          - org.gnome.Papers
-          - org.gnome.Characters
-          - org.gnome.TextEditor
-          - org.gtk.Gtk3theme.adw-gtk3
-          - org.gtk.Gtk3theme.adw-gtk3-dark
-          - com.github.tchx84.Flatseal
-          - com.mattjakeman.ExtensionManager
-          - io.github.kolunmi.Bazaar
-          - be.alexandervanhee.gradia
-        remove:
-          - org.gnome.Extensions
   - type: fonts
     fonts:
       nerd-fonts:
         - JetBrainsMono
-  - type: gnome-extensions
-    install:
-      - 307
-      - 615
-      - 779
-      - 517
-      - 3193
-      - 3843
-      - 2986
-      - 7048
   - type: gschema-overrides
   - type: systemd
     system:
       enabled:
         - usbguard.service
+        - lightdm.service
     user:
       enabled:
         - usbguard-notifier.service
