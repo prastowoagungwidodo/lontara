@@ -135,7 +135,6 @@ modules:
         - usbguard.service
         - lightdm.service
         - initial-setup.service
-        - initial-setup-text.service
     user:
       enabled:
         - usbguard-notifier.service
