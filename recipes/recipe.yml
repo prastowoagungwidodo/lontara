@@ -38,14 +38,17 @@ modules:
       nonfree: negativo17
     group-install:
       packages:
+        - base-x
         - development-tools
-        - xfce-desktop-environment
-      with-optional: true
+        - xfce-desktop
+        - xfce-extra-plugins
     install:
       packages:
         - lightdm
         - slick-greeter
         - lightdm-settings
+        - network-manager-applet
+        - xarchiver
         - ghostty
         - starship
         - trivalent
