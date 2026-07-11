@@ -27,6 +27,7 @@ modules:
       DEFAULT_HOSTNAME: lontara
       BUG_REPORT_URL: https://github.com/prastowoagungwidodo/lontara/issues
       HOME_URL: https://github.com/prastowoagungwidodo/lontara
+      VARIANT_ID: workstation
   - type: dnf
     repos:
       copr:
