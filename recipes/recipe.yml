@@ -38,7 +38,6 @@ modules:
       nonfree: negativo17
     group-install:
       packages:
-        - base-x
         - development-tools
         - xfce-desktop
         - xfce-extra-plugins
