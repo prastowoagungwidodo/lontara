@@ -39,7 +39,8 @@ modules:
     group-install:
       packages:
         - development-tools
-        - xfce-desktop
+        - xfce-desktop-environment
+      with-optional: true
     install:
       packages:
         - lightdm
@@ -134,7 +135,6 @@ modules:
       enabled:
         - usbguard.service
         - lightdm.service
-        - initial-setup.service
     user:
       enabled:
         - usbguard-notifier.service
