@@ -43,6 +43,7 @@ modules:
         - xfce-extra-plugins
     install:
       packages:
+        - initial-setup
         - lightdm
         - slick-greeter
         - lightdm-settings
@@ -136,6 +137,7 @@ modules:
     system:
       enabled:
         - usbguard.service
+        - initial-setup.service
         - lightdm.service
     user:
       enabled:
@@ -145,7 +147,7 @@ modules:
     brew-analytics: false # disable telemetry
   - type: script
     scripts:
-      - lontara-customize.sh
+      #- lontara-customize.sh
       - netbird-install.sh
       - enable-faillock.sh
       #- disable-sshd-vsock.sh
