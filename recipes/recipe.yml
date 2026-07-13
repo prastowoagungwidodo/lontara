@@ -33,6 +33,8 @@ modules:
         - atim/starship
         - secureblue/packages
         - scottames/ghostty
+        - madoka241/dmz-cursor-themes
+        - antergos/lightdm-webkit2-greeter
       files:
         - https://repo.secureblue.dev/secureblue.repo
       nonfree: negativo17
@@ -45,10 +47,16 @@ modules:
       packages:
         - initial-setup
         - lightdm
-        - slick-greeter
-        - lightdm-settings
+        - lightdm-gtk-greeter
         - network-manager-applet
         - xarchiver
+        - human-theme-gtk
+        - lightdm-webkit2-greeter
+        - dmz-cursor-themes
+        - gtk2-engines
+        - gtk-murrine-engine
+        - elementary-icon-theme
+        - papirus-icon-theme
         - ghostty
         - starship
         - trivalent
@@ -155,6 +163,7 @@ modules:
       - install-zsh-plugins.sh
       #- install-warp-terminal.sh
       - hardened_malloc.sh
+      - setting-up-human-theme-env.sh
   - type: kargs
     arch: x86_64, aarch64
     kargs:
