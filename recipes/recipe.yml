@@ -33,8 +33,6 @@ modules:
         - atim/starship
         - secureblue/packages
         - scottames/ghostty
-        - madoka241/dmz-cursor-themes
-        - antergos/lightdm-webkit2-greeter
       files:
         - https://repo.secureblue.dev/secureblue.repo
       nonfree: negativo17
@@ -48,11 +46,10 @@ modules:
         - initial-setup
         - lightdm
         - lightdm-gtk-greeter
+        - lightdm-gtk-greeter-settings
         - network-manager-applet
         - xarchiver
         - human-theme-gtk
-        - lightdm-webkit2-greeter
-        - dmz-cursor-themes
         - gtk2-engines
         - gtk-murrine-engine
         - elementary-icon-theme
