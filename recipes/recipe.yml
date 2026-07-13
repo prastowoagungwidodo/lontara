@@ -48,7 +48,13 @@ modules:
         - lightdm-gtk-greeter
         - lightdm-gtk-greeter-settings
         - network-manager-applet
+        - ulauncher
         - xarchiver
+        - xfce4-volumed
+        - xfce4-clipman-plugin
+        - mousepad
+        - ristretto
+        - parole
         - human-theme-gtk
         - gtk2-engines
         - gtk-murrine-engine
@@ -161,6 +167,7 @@ modules:
       #- install-warp-terminal.sh
       - hardened_malloc.sh
       - setting-up-human-theme-env.sh
+      - install-ubuntu-icon.sh
   - type: kargs
     arch: x86_64, aarch64
     kargs:
