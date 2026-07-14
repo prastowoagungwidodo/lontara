@@ -52,6 +52,8 @@ modules:
         - xarchiver
         - xfce4-volumed
         - xfce4-clipman-plugin
+        - xclip
+        - redshift
         - mousepad
         - ristretto
         - parole
@@ -143,6 +145,7 @@ modules:
     fonts:
       nerd-fonts:
         - JetBrainsMono
+        - NerdFontsSymbolsOnly
   - type: gschema-overrides
   - type: systemd
     system:
