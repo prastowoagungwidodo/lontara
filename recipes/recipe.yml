@@ -52,7 +52,7 @@ modules:
         - xarchiver
         - xfce4-clipman-plugin
         - xclip
-        - dejavu-fonts
+        - dejavu-fonts-all
         - redshift
         - mousepad
         - ristretto
