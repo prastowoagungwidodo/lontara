@@ -50,9 +50,9 @@ modules:
         - network-manager-applet
         - ulauncher
         - xarchiver
-        - xfce4-volumed
         - xfce4-clipman-plugin
         - xclip
+        - dejavu-fonts
         - redshift
         - mousepad
         - ristretto
@@ -60,7 +60,7 @@ modules:
         - human-theme-gtk
         - gtk2-engines
         - gtk-murrine-engine
-        - elementary-icon-theme
+        - elementary-xfce-icon-theme
         - papirus-icon-theme
         - ghostty
         - starship
