@@ -172,6 +172,7 @@ modules:
       - hardened_malloc.sh
       - setting-up-human-theme-env.sh
       - install-ubuntu-icon.sh
+      - install-dmz-cursor-theme.sh
   - type: kargs
     arch: x86_64, aarch64
     kargs:
