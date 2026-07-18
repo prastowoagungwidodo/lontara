@@ -51,6 +51,7 @@ modules:
         - ulauncher
         - xarchiver
         - xfce4-clipman-plugin
+        - touchegg
         - xclip
         - dejavu-fonts-all
         - redshift
