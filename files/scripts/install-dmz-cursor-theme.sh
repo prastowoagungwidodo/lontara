@@ -1,30 +1,44 @@
 #!/usr/bin/env bash
+
 set -euo pipefail
 
-# Installs DMZ White and DMZ Black cursor themes
+URL="http://launchpadlibrarian.net/845777996/dmz-cursor-theme_0.4.5.3build1_all.deb"
+WORKDIR="$(mktemp -d)"
 
-DMZ_WHITE_URL="https://github.com/rhizoome/dmz-cursors/releases/download/v1.0/dmz-white.tar.xz"
-DMZ_BLACK_URL="https://github.com/rhizoome/dmz-cursors/releases/download/v1.0/dmz-black.tar.xz"
+echo "Using temporary directory: $WORKDIR"
 
-INSTALL_DIR="/usr/share/icons"
-TMP_DIR="$(mktemp -d)"
+cd "$WORKDIR"
 
-cleanup() {
-  rm -rf "$TMP_DIR"
-}
-trap cleanup EXIT
+# Download package
+curl -L -o dmz-cursor-theme.deb "$URL"
 
-echo "Downloading DMZ cursor themes..."
+# Extract .deb
+ar x dmz-cursor-theme.deb
 
-curl -L "$DMZ_WHITE_URL" -o "$TMP_DIR/dmz-white.tar.xz"
-curl -L "$DMZ_BLACK_URL" -o "$TMP_DIR/dmz-black.tar.xz"
+# Extract payload
+if [ -f data.tar.xz ]; then
+  tar -xJf data.tar.xz
+elif [ -f data.tar.gz ]; then
+  tar -xzf data.tar.gz
+elif [ -f data.tar.zst ]; then
+  tar --zstd -xf data.tar.zst
+else
+  echo "Unsupported package format"
+  exit 1
+fi
 
-echo "Extracting archives..."
+# Install cursor themes only
+sudo mkdir -p /usr/share/icons
 
-tar -xJf "$TMP_DIR/dmz-white.tar.xz" -C "$TMP_DIR"
-tar -xJf "$TMP_DIR/dmz-black.tar.xz" -C "$TMP_DIR"
+if [ -d usr/share/icons/DMZ-White ]; then
+  sudo cp -a usr/share/icons/DMZ-White /usr/share/icons/
+fi
 
-echo "Installing themes to $INSTALL_DIR..."
+if [ -d usr/share/icons/DMZ-Black ]; then
+  sudo cp -a usr/share/icons/DMZ-Black /usr/share/icons/
+fi
 
-find "$TMP_DIR" -maxdepth 1 -type d \( -name "dmz-white" -o -name "dmz-black" \) \
-  -exec cp -a {} "$INSTALL_DIR/" \;
+echo "Installed themes:"
+ls -1 /usr/share/icons | grep '^DMZ-' || true
+
+echo "Done."
