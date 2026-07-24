@@ -33,6 +33,7 @@ modules:
         - atim/starship
         - secureblue/packages
         - scottames/ghostty
+        - quadratech188/vicinae
       files:
         - https://repo.secureblue.dev/secureblue.repo
       nonfree: negativo17
@@ -48,9 +49,9 @@ modules:
         - lightdm-gtk-greeter
         - lightdm-gtk-greeter-settings
         - network-manager-applet
-        - ulauncher
         - xarchiver
         - xfce4-clipman-plugin
+        - vicinae
         - touchegg
         - xclip
         - dejavu-fonts-all
