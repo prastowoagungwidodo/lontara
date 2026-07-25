@@ -54,6 +54,7 @@ modules:
         - vicinae
         - touchegg
         - xclip
+        - firefox
         - dejavu-fonts-all
         - redshift
         - mousepad
@@ -132,8 +133,6 @@ modules:
             new: libswscale
     remove:
       packages:
-        - firefox
-        - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
         - dnfdragora
         - dnfdragora-updater
         - thunderbird
