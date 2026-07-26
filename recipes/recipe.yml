@@ -56,6 +56,7 @@ modules:
         - xclip
         - firefox
         - dejavu-fonts-all
+        - bitstream-vera-fonts-all
         - redshift
         - human-theme-gtk
         - gtk2-engines
