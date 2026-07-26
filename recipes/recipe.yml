@@ -57,6 +57,7 @@ modules:
         - firefox
         - dejavu-fonts-all
         - bitstream-vera-fonts-all
+        - twitter-twemoji-fonts 
         - redshift
         - human-theme-gtk
         - gtk2-engines
