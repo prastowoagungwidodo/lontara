@@ -57,15 +57,14 @@ modules:
         - firefox
         - dejavu-fonts-all
         - redshift
-        - mousepad
-        - ristretto
-        - parole
+        - zoitechat
         - human-theme-gtk
         - gtk2-engines
         - gtk-murrine-engine
         - elementary-xfce-icon-theme
         - papirus-icon-theme
         - ghostty
+        - alacritty
         - starship
         - trivalent
         - trivalent-subresource-filter
@@ -141,6 +140,11 @@ modules:
       - notify: false # Send notification after install/uninstall is finished (true/false)
         scope: system
         # If no repo information is specified, Flathub will be used by default
+        install:
+          - org.xfce.ristretto
+          - org.xfce.mousepad
+          - org.videolan.VLC
+          - org.atheme.audacious
   - type: fonts
     fonts:
       nerd-fonts:
@@ -172,6 +176,7 @@ modules:
       - setting-up-human-theme-env.sh
       - install-ubuntu-icon.sh
       - install-dmz-cursor-theme.sh
+      - make-zoitechat-wrapped.sh
   - type: kargs
     arch: x86_64, aarch64
     kargs:
