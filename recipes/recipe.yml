@@ -57,7 +57,7 @@ modules:
         - firefox
         - dejavu-fonts-all
         - bitstream-vera-fonts-all
-        - twitter-twemoji-fonts 
+        - twitter-twemoji-fonts
         - redshift
         - human-theme-gtk
         - gtk2-engines
@@ -91,6 +91,7 @@ modules:
         - podman
         - podman-compose
         - python3-pip
+        - schroedinger-cat-backgrounds-xfce
     replace:
       - from-repo: fedora-multimedia
         skip-unavailable: true
