@@ -7,7 +7,7 @@ description: Secure and Easy to Use Distro
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/silverblue-main
-image-version: 44 # latest is also supported if you want new updates ASAP
+image-version: 45 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -66,6 +66,9 @@ modules:
         - openssl-devel
         - podman
         - podman-compose
+        - cmake
+        - python3-pip
+        - webkit2gtk4.1
     replace:
       - from-repo: fedora-multimedia
         skip-unavailable: true
@@ -142,6 +145,7 @@ modules:
     fonts:
       nerd-fonts:
         - JetBrainsMono
+        - NerdFontsSymbolsOnly
   - type: gnome-extensions
     install:
       - 307
@@ -157,6 +161,13 @@ modules:
     system:
       enabled:
         - usbguard.service
+      disabled:
+        - sshd.service
+        - cups.service
+        - cups.socket
+        - cups-browsed.service
+        - avahi-daemon.service
+        - avahi-daemon.socket
     user:
       enabled:
         - usbguard-notifier.service
