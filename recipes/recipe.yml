@@ -146,16 +146,16 @@ modules:
       nerd-fonts:
         - JetBrainsMono
         - NerdFontsSymbolsOnly
-  - type: gnome-extensions
-    install:
-      - 307
-      - 615
-      - 779
-      - 517
-      - 3193
-      - 3843
-      - 2986
-      - 7048
+  # - type: gnome-extensions
+  #   install:
+  #     - 307
+  #     - 615
+  #     - 779
+  #     - 517
+  #     - 3193
+  #     - 3843
+  #     - 2986
+  #     - 7048
   - type: gschema-overrides
   - type: systemd
     system:
